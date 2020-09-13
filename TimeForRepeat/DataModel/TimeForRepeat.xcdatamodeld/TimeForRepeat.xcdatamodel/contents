@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Exercise" representedClassName="Exercise" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String"/>
+        <attribute name="timeEnd" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="timeStart" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="perentGroupExercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GroupExercise" inverseName="relationGroupExercise" inverseEntity="GroupExercise"/>
+    </entity>
+    <entity name="GroupExercise" representedClassName="GroupExercise" syncable="YES" codeGenerationType="class">
+        <attribute name="group" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="relationGroupExercise" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exercise" inverseName="perentGroupExercise" inverseEntity="Exercise"/>
+    </entity>
+    <elements>
+        <element name="GroupExercise" positionX="159.74609375" positionY="51.62109375" width="160.5234375" height="88"/>
+        <element name="Exercise" positionX="394.63671875" positionY="93.4609375" width="128" height="103"/>
+    </elements>
+</model>
