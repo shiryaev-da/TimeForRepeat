@@ -2,8 +2,8 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Exercise" representedClassName="Exercise" syncable="YES" codeGenerationType="class">
         <attribute name="name" attributeType="String"/>
-        <attribute name="timeEnd" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="timeStart" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="timeEnd" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="timeStart" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="perentGroupExercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GroupExercise" inverseName="relationGroupExercise" inverseEntity="GroupExercise"/>
     </entity>
     <entity name="GroupExercise" representedClassName="GroupExercise" syncable="YES" codeGenerationType="class">

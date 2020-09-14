@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dQI-YT-qRK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o5Z-ub-m1R">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Текущий замер-->
         <scene sceneID="gYo-fx-WpV">
             <objects>
-                <tableViewController id="Ldc-kh-rS7" sceneMemberID="viewController">
+                <tableViewController id="Ldc-kh-rS7" customClass="StepProcessTableViewController" customModule="TimeForRepeat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="r0e-J3-HPy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,7 +29,14 @@
                             <outlet property="delegate" destination="Ldc-kh-rS7" id="JyP-vx-BR2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="z0s-ld-ZwR"/>
+                    <navigationItem key="navigationItem" title="Текущий замер" id="z0s-ld-ZwR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="EMb-bP-l96">
+                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPress:" destination="Ldc-kh-rS7" id="bZ9-fm-lJZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MFU-Wr-t7g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -74,10 +81,28 @@
             </objects>
             <point key="canvasLocation" x="986.95652173913049" y="119.86607142857142"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="Gbd-jq-fnw">
+            <objects>
+                <tabBarController id="o5Z-ub-m1R" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DU0-GS-RmR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="dQI-YT-qRK" kind="relationship" relationship="viewControllers" id="S7Q-sh-pHV"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5iU-KI-Kpr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-772" y="120"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="nOg-OW-IHt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dQI-YT-qRK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="tJz-L9-Ubo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iNP-Bv-hcn">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

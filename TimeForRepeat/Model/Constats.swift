@@ -14,4 +14,5 @@ class K {
     
 //Name table view
     static let categoryExercise = "cellGroupExercise"
+    static let exerciseItem = "cellStepProcess"
 }
