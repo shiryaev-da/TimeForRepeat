@@ -15,4 +15,6 @@ class K {
 //Name table view
     static let categoryExercise = "cellGroupExercise"
     static let exerciseItem = "cellStepProcess"
+//Name Cell
+    static let nameReusableCellStep = "ReusableCell"
 }

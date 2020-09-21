@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D2E84A72512A16600167ECF /* StepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2E84A52512A16600167ECF /* StepCell.swift */; };
+		0D2E84A82512A16600167ECF /* StepCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2E84A62512A16600167ECF /* StepCell.xib */; };
 		0D435DAB250EA59A009ABC7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D435DAA250EA59A009ABC7F /* AppDelegate.swift */; };
 		0D435DAD250EA59A009ABC7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D435DAC250EA59A009ABC7F /* SceneDelegate.swift */; };
 		0D435DB2250EA59A009ABC7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D435DB0250EA59A009ABC7F /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D2E84A52512A16600167ECF /* StepCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCell.swift; sourceTree = "<group>"; };
+		0D2E84A62512A16600167ECF /* StepCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StepCell.xib; sourceTree = "<group>"; };
 		0D435DA7250EA59A009ABC7F /* TimeForRepeat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeForRepeat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D435DAA250EA59A009ABC7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D435DAC250EA59A009ABC7F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,7 +68,7 @@
 			children = (
 				0D435DCB250EADE3009ABC7F /* Model */,
 				0D435DC4250EA646009ABC7F /* Delegate */,
-				0D435DC1250EA5C8009ABC7F /* Controllers */,
+				0D435DC1250EA5C8009ABC7F /* StoryBoard */,
 				0D435DC2250EA61D009ABC7F /* View */,
 				0D435DC3250EA627009ABC7F /* DataModel */,
 				0D435DB6250EA5A6009ABC7F /* Assets.xcassets */,
@@ -74,19 +78,21 @@
 			path = TimeForRepeat;
 			sourceTree = "<group>";
 		};
-		0D435DC1250EA5C8009ABC7F /* Controllers */ = {
+		0D435DC1250EA5C8009ABC7F /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
-				0D435DC5250EA7C2009ABC7F /* GroupExerciseTableViewController.swift */,
-				0D435DCC250FE4A1009ABC7F /* StepProcessTableViewController.swift */,
+				0D435DB0250EA59A009ABC7F /* Main.storyboard */,
 			);
-			path = Controllers;
+			path = StoryBoard;
 			sourceTree = "<group>";
 		};
 		0D435DC2250EA61D009ABC7F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0D435DB0250EA59A009ABC7F /* Main.storyboard */,
+				0D435DC5250EA7C2009ABC7F /* GroupExerciseTableViewController.swift */,
+				0D435DCC250FE4A1009ABC7F /* StepProcessTableViewController.swift */,
+				0D2E84A52512A16600167ECF /* StepCell.swift */,
+				0D2E84A62512A16600167ECF /* StepCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -175,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D435DBA250EA5A6009ABC7F /* LaunchScreen.storyboard in Resources */,
+				0D2E84A82512A16600167ECF /* StepCell.xib in Resources */,
 				0D435DB7250EA5A6009ABC7F /* Assets.xcassets in Resources */,
 				0D435DB2250EA59A009ABC7F /* Main.storyboard in Resources */,
 			);
@@ -192,6 +199,7 @@
 				0D435DCA250EADD6009ABC7F /* Constats.swift in Sources */,
 				0D435DCD250FE4A1009ABC7F /* StepProcessTableViewController.swift in Sources */,
 				0D435DAD250EA59A009ABC7F /* SceneDelegate.swift in Sources */,
+				0D2E84A72512A16600167ECF /* StepCell.swift in Sources */,
 				0D435DC6250EA7C2009ABC7F /* GroupExerciseTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
