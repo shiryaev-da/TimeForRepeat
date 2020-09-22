@@ -12,6 +12,11 @@ import CoreData
 class StepProcessTableViewController: UITableViewController {
     var itemExersiceArray = [Exercise]()
     var timeExersiceArray: [Int] = [0]
+    @objc var timeOperationStep: Timer!
+    var timer = Timer()
+    
+    var totatTime = 0
+    @IBOutlet weak var topLabelTime: UILabel!
     
     @IBOutlet weak var TopLabelTotalTime: UILabel!
     
@@ -41,7 +46,16 @@ class StepProcessTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  itemExersiceArray.count
+        print("Кол-во элементов \(itemExersiceArray.count)")
+        //Приводим кол-во элементов в массиве = кол-ву элементов в чек листе для замера
+        timeExersiceArray = [0]
+        var chek = 0
+        while chek < itemExersiceArray.count-1 {
+            timeExersiceArray.append(contentsOf: [0])
+            chek += 1
+        }
+        print ("Создан массив из элементов\(timeExersiceArray)")
+        return itemExersiceArray.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -115,29 +129,33 @@ class StepProcessTableViewController: UITableViewController {
           }
 //MARK: - Opretion on timer
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        timeOperation(typeAction: 0)
-        let item = itemExersiceArray[indexPath.row]
-        print(item)
-     
-       // cell.label?.text = item.name!
-      //  cell.labelTimeCell.text = String(format:  "%.1f", time_step)
+        startTimer()
     }
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        timeOperation(typeAction: 1)
+        endTimer()
     }
     
 
-    func timeOperation(typeAction: Int = 1) /*-> Int*/ {
-        //If start and not chenge cell (0)
-        
-        
-        if typeAction == 0 {
-           print("Time start")
-        } else
-        {
-           print("Time stop")
-        }
-        //return 1
+    @objc  func timeOperation() /*-> Int*/ {
+        totatTime += 1
+        print("Время шага \(totatTime) секунд")
+        topLabelTime.text = timeFormatted(totatTime)
     }
 
+    
+    func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timeOperation), userInfo: nil, repeats: true)
+    }
+    
+    func endTimer() {
+        timer.invalidate()
+    }
+
+    func timeFormatted(_ totalSeconds: Int) -> String {
+        let seconds: Int = totalSeconds % 60
+        let minutes: Int = (totalSeconds / 60) % 60
+        let hours: Int = (totalSeconds / 60/60) % 60
+        //     let hours: Int = totalSeconds / 3600
+        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+    }
 }
